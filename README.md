@@ -12,4 +12,3 @@
 > Oh well, it's not so bad here, at least I can focus. And it keeps the mouse away. Until the next time I hear people outside chanting "Modern IDEs are magic".
 >
 > -- <cite>chronolitus on HackerNews (https://news.ycombinator.com/item?id=25044627)</cite>
-

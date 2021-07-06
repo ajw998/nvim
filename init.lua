@@ -1,6 +1,6 @@
-require('settings')
-require('plugins')
-require('keymaps')
-require('color.init')
-require('treesitter')
-require('lsp')
+require 'settings'
+require 'plugins'
+require 'keymaps'
+require 'lsp'
+require 'color.init'
+require 'plugin.init'

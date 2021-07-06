@@ -2,7 +2,7 @@
 -- Author: Andrew Wong
 -- Description: Customised implementation of Monokai Pro (Octagon)
 
-require "nvim-treesitter.highlight"
+-- require "nvim-treesitter.highlight"
 
 local vim = vim
 
@@ -30,44 +30,53 @@ end
 
 function monokai_pro_octagon.base_syntax()
     local base_syntax = {
-        PMenu        = { fg = monokai_pro_octagon.lightgrey, bg="NONE" };
-        PMenuSel     = { fg = "#282a3a", bg=monokai_pro_octagon.yellow };
-        Comment      = { fg = "#727072" };
-        Cursor       = { fg = monokai_pro_octagon.white };
-        CursorLineNR = { fg = monokai_pro_octagon.yellow };
-        Identifier   = { fg = monokai_pro_octagon.red };
-        Keyword      = { fg = monokai_pro_octagon.red };
-        LineNr       = { fg = "#696d77" };
-        MatchParen   = { fg = monokai_pro_octagon.red, style="underline" };
-        NonText      = { fg = "#696769" };
-        Number       = { fg = monokai_pro_octagon.purple };
-        Operator     = { fg = monokai_pro_octagon.red };
-        Statement    = { fg = monokai_pro_octagon.red };
-        StatusLine   = { fg = monokai_pro_octagon.white, bg="#696769" };
-        String       = { fg = monokai_pro_octagon.yellow };
-        Visual       = { bg = "#323343" };
-    }
+    PMenu        = { fg = monokai_pro_octagon.lightgrey, bg="NONE" };
+  PMenuSel     = { fg = "#282a3a", bg=monokai_pro_octagon.yellow };
+  Comment      = { fg = "#727072" };
+  ColorColumn  = { fg = "NONE", bg = "NONE" };
+  Cursor       = { fg = monokai_pro_octagon.white };
+  CursorLineNR = { fg = monokai_pro_octagon.yellow };
+  Identifier   = { fg = monokai_pro_octagon.red };
+  Keyword      = { fg = monokai_pro_octagon.red };
+  LineNr       = { fg = "#696d77" };
+  MatchParen   = { fg = monokai_pro_octagon.red, style="underline" };
+  NonText      = { fg = "#696769" };
+  Number       = { fg = monokai_pro_octagon.purple };
+  Operator     = { fg = monokai_pro_octagon.red };
+  Statement    = { fg = monokai_pro_octagon.red };
+  StatusLine   = { fg = monokai_pro_octagon.white, bg="#696769" };
+  String       = { fg = monokai_pro_octagon.yellow };
+  VertSplit    = { fg = "#696769", bg = "NONE" };
+  Visual       = { bg = "#323343" };
+}
     return base_syntax
 end
 
 
 function monokai_pro_octagon.load_plugin_syntax()
     local plugin_syntax = {
-        TSPunctBracket = { fg = monokai_pro_octagon.white };
-        TSBoolean      = { fg = monokai_pro_octagon.purple };
-        TSComment      = { fg = monokai_pro_octagon.lightgrey };
-        TSString       = { fg = monokai_pro_octagon.yellow };
-        TSError        = { fg = monokai_pro_octagon.red };
-        TSConstructor  = { fg = monokai_pro_octagon.lightgreen };
-        TSAnnotation   = { fg = monokai_pro_octagon.lightgrey };
-        TSNumber       = { fg = monokai_pro_octagon.purple };
-        TSCharacter    = { fg = monokai_pro_octagon.purple };
-        TSParameter    = { fg = monokai_pro_octagon.white };
-        TSConstBuiltin = { fg = monokai_pro_octagon.teal };
-        TSFunction     = { fg = monokai_pro_octagon.lightgreen };
-        TSProperty     = { fg = monokai_pro_octagon.white };
-        TSLiteral      = { fg = monokai_pro_octagon.white };
-        TSType         = { fg = monokai_pro_octagon.teal }
+      TSPunctBracket = { fg = monokai_pro_octagon.white };
+      TSBoolean      = { fg = monokai_pro_octagon.purple };
+      TSComment      = { fg = monokai_pro_octagon.lightgrey };
+      TSString       = { fg = monokai_pro_octagon.yellow };
+      TSError        = { fg = monokai_pro_octagon.red };
+      TSConstructor  = { fg = monokai_pro_octagon.lightgreen };
+      TSAnnotation   = { fg = monokai_pro_octagon.lightgrey };
+      TSNumber       = { fg = monokai_pro_octagon.purple };
+      TSCharacter    = { fg = monokai_pro_octagon.purple };
+      TSParameter    = { fg = monokai_pro_octagon.white };
+      TSConstBuiltin = { fg = monokai_pro_octagon.teal };
+      TSFunction     = { fg = monokai_pro_octagon.lightgreen };
+      TSProperty     = { fg = monokai_pro_octagon.white };
+      TSLiteral      = { fg = monokai_pro_octagon.white };
+      TSType         = { fg = monokai_pro_octagon.teal };
+      TSTitle        = { fg = monokai_pro_octagon.white };
+      LspDiagnosticsDefaultWarning = { fg = monokai_pro_octagon.orange };
+      LspDiagnosticsVirtualTextWarning = { fg = monokai_pro_octagon.orange };
+      LspDiagnosticsVirtualTextError = { fg = monokai_pro_octagon.red };
+      LspReferenceText = { fg = "#282a3a",  bg = monokai_pro_octagon.yellow };
+      LspReferenceRead = { fg = "#282a3a", bg = monokai_pro_octagon.yellow };
+      LspReferenceWrite = { bg = monokai_pro_octagon.yellow };
     }
     return plugin_syntax
 end
@@ -91,7 +100,6 @@ function monokai_pro_octagon.colourscheme()
   end
   vim.o.background = 'dark'
   vim.o.termguicolors = true
-  vim.g.colors_name = 'monokai-pro-octagon'
   local syntax = monokai_pro_octagon.base_syntax()
   for group,colors in pairs(syntax) do
     monokai_pro_octagon.highlight(group,colors)
