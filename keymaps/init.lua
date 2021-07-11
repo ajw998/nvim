@@ -27,10 +27,6 @@ map('n', 'j', 'gj', { noremap = true })
 map('n', '<leader><space>', ':let@/=""<CR>', { noremap = true })
 -- Close buffer
 map('n', '<leader>x', ':bd <CR>', { noremap = true })
-
--- Plugin-specific
--- Go to definition using coc.nvim
-map('n', 'gd', '<Plug>(coc-definition)', {})
 -- Vim-sneak
 map('n', 'f', '<Plug>Sneak_s', {})
 map('n', 'F', '<Plug>Sneak_S', {})

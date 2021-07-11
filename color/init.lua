@@ -1,1 +1,1 @@
-require('color.monokai')
+require('color.theme')

@@ -1,16 +1,21 @@
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
-        "bash",
-        "go",
-        "javascript",
-        "typescript",
-        "json",
-        "jsonc",
-        "lua",
-        "html",
-        "css",
-        "query"
+				"bash",
+				"go",
+				"javascript",
+				"yaml",
+				"typescript",
+				"tsx",
+				"json",
+				"jsonc",
+				"lua",
+				"html",
+				"css",
+				"query"
     },
+	indent = {
+		enable = true
+	};
     playground = {
     enable = true,
     disable = {},
@@ -29,8 +34,29 @@ require'nvim-treesitter.configs'.setup {
       show_help = '?',
     },
   },
+  refactor = {
+		highlight_current_scope = {
+			enable = false
+		},
+		navigation = {
+      enable = true,
+      keymaps = {
+        list_definitions = "gD",
+        list_definitions_toc = "gnT",
+      },
+    },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr",
+      },
+    },
+  },
   highlight = {
     enable = true,
+		custom_captures = {
+			["variable_declarator_keyword"] = TSTypeBuiltin
+		}
   },
   query_linter = {
     enable = true,

@@ -68,7 +68,7 @@ buffer.autoindent = true
 buffer.tabstop = 2
 -- Number of spaces a <Tab> counts for while editing
 buffer.softtabstop = 2
-buffer.shiftwidth = 4
+buffer.shiftwidth = 2
 -- Use the appropriate number of spaces when expanding tabs
 buffer.expandtab = true
 -- Turn on Omni completion
