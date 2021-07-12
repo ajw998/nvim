@@ -4,7 +4,7 @@ require'compe'.setup {
   enabled              = true;
   autocomplete         = true;
   debug                = false;
-  min_length           = 2;
+  min_length           = 3;
   preselect            = 'enable';
   throttle_time        = 80;
   source_timeout       = 200;
@@ -13,16 +13,17 @@ require'compe'.setup {
 
   source = {
     path          = true;
-    buffer = {
-      enable = true,
-      priority = 1,     -- last priority
+    buffer        = {
+			ignored_filetypes = {'markdown'},
+      enable      = true,
+      priority    = 1,     -- last priority
     },
-    nvim_lsp = {
-      enable = true,
-      priority = 10001, -- takes precedence over file completion
+    nvim_lsp      = {
+      enable      = true,
+      priority    = 10001, -- takes precedence over file completion
     },
     nvim_lua      = true;
-    calc          = true;
+    calc          = false;
     omni          = false;
     spell         = false;
     tags          = true;

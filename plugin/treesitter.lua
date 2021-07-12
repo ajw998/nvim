@@ -2,6 +2,7 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = {
 				"bash",
 				"go",
+				"swift",
 				"javascript",
 				"yaml",
 				"typescript",
@@ -54,9 +55,6 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-		custom_captures = {
-			["variable_declarator_keyword"] = TSTypeBuiltin
-		}
   },
   query_linter = {
     enable = true,

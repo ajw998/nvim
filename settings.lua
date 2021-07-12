@@ -73,6 +73,8 @@ buffer.shiftwidth = 2
 buffer.expandtab = true
 -- Turn on Omni completion
 buffer.omnifunc='syntaxcomplete#Complete'
+-- Turn off syntax colouring if lines are too long
+buffer.synmaxcol=200
 
 -- Disable distribution plugins
 local disable_distribution_plugins = function()

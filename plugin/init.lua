@@ -15,9 +15,9 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 local packer_install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-local packer_compiled_path = packer_install_path .. "/plugin/packer_compiled.vim"
 local is_packer_installed = vim.fn.empty(vim.fn.glob(packer_install_path)) == 0
-local is_packer_compiled = vim.fn.empty(vim.fn.glob(packer_compiled_path)) == 0
+-- local packer_compiled_path = packer_install_path .. "/plugin/packer_compiled.vim"
+-- local is_packer_compiled = vim.fn.empty(vim.fn.glob(packer_compiled_path)) == 0
 
 -- Automatically install Packer.nvim if not detected
 if not is_packer_installed then
@@ -30,13 +30,12 @@ end
 
 return require('packer').startup(function()
     local use = require'packer'.use
-	use 'nvim-treesitter/nvim-treesitter-textobjects'
-	use 'nvim-treesitter/nvim-treesitter-refactor'
+		-- Packer can manage itself
+		use 'nvim-treesitter/nvim-treesitter-refactor'
+		use 'nvim-treesitter/nvim-treesitter-textobjects'
+		use 'wbthomason/packer.nvim'
     use '/usr/local/opt/fzf'
-    use 'editorconfig/editorconfig-vim'
     use 'hrsh7th/nvim-compe'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
     use 'justinmk/vim-sneak'
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
