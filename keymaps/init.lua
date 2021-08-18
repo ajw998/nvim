@@ -33,3 +33,5 @@ map('n', 'F', '<Plug>Sneak_S', {})
 -- ctags
 map('n', '\\r', ':!ctags -R . <CR>', { noremap = true})
 map('n', '<leader>j', ':Tags<CR>', { noremap = true })
+-- Yank to clipbaord
+map('v', '<leader>y', '"*y', { noremap = true })

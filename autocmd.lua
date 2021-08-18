@@ -17,7 +17,10 @@ end
 
 local autocmd = {
 	yank_highlight = {
-		{ 'TextYankPost', '*', 'silent! lua vim.highlight.on_yank{ higroup="IncSearch", timeout=2000 }' }
+		{ 'TextYankPost', '*', 'silent! lua vim.highlight.on_yank{ higroup="IncSearch", timeout=500 }' }
+	};
+	go = {
+		{'BufEnter,BufNewFile', '*.go', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2'}
 	};
 	lua = {
 		{'BufEnter,BufNewFile', '*.lua', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2'}
