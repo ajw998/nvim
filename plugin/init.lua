@@ -1,4 +1,4 @@
-require('plugin.fzf')
+require('plugin.telescope')
 require('plugin.treesitter')
 require('plugin.vim-sneak')
 require('plugin.completion')
@@ -48,6 +48,7 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
-    use { 'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
+		use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+		use { 'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
 end)
 
