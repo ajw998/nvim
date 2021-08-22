@@ -1,18 +1,18 @@
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
 				"bash",
+				"css",
 				"go",
-				"swift",
+				"html",
 				"javascript",
-				"yaml",
-				"typescript",
-				"tsx",
 				"json",
 				"jsonc",
 				"lua",
-				"html",
-				"css",
-				"query"
+				"query",
+				"swift",
+				"tsx",
+				"typescript",
+				"yaml",
     },
 	indent = {
 		enable = true

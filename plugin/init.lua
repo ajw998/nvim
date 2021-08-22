@@ -1,7 +1,7 @@
-require('plugin.telescope')
 require('plugin.treesitter')
 require('plugin.vim-sneak')
 require('plugin.completion')
+require('plugin.lualine')
 
 -- Plugin Management
 -- Will be using Packer.nvim for package management
@@ -39,16 +39,14 @@ return require('packer').startup(function()
     use 'justinmk/vim-sneak'
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
     use 'tommcdo/vim-lion'
     use 'tpope/vim-commentary'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
-    use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
-		use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 		use { 'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
+		use { 'hoob3rt/lualine.nvim' }
 end)
 
