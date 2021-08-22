@@ -5,6 +5,7 @@
 local M = {}
 
 M.colors = {
+	black      = "#282a3a",
 	blue       = "#204a87",
 	grey       = "#939293",
 	lightgreen = "#bad761",
