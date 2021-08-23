@@ -48,5 +48,6 @@ return require('packer').startup(function()
     use 'tpope/vim-unimpaired'
 		use { 'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
 		use { 'hoob3rt/lualine.nvim' }
+		use 'neovimhaskell/haskell-vim'
 end)
 
