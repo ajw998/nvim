@@ -14,6 +14,8 @@ local buffer = vim.bo
 g.autoread = true
 -- List of directories for the backup file
 g.backupdir = '/private/tmp'
+-- Completion
+g.completeopt = "menuone,noselect"
 -- Number of screen lines to use for the command line
 g.cmdheight = 2
 g.directory = homedir .. '/.vim/swap'
