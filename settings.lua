@@ -79,9 +79,25 @@ buffer.omnifunc='syntaxcomplete#Complete'
 buffer.synmaxcol=200
 
 -- Disable distribution plugins
-local disable_distribution_plugins = function()
-    vim.g.loaded_netrw = 1
-    vim.loaded_netrwPlugin = 1
-end
 
-disable_distribution_plugins()
+local disabled_built_ins = {
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "logipat",
+    "rrhelper",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
