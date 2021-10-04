@@ -1,9 +1,3 @@
-require('plugin.treesitter')
-require('plugin.vim-sneak')
--- require('plugin.completion')
-require('plugin.lualine')
-require('plugin.coc')
-
 -- Plugin Management
 -- Will be using Packer.nvim for package management
 
@@ -28,17 +22,14 @@ if not is_packer_installed then
     is_packer_installed = 1
 end
 
-
-return require('packer').startup(function()
+require('packer').startup(function()
     local use = require'packer'.use
 		-- Packer can manage itself
 		use 'nvim-treesitter/nvim-treesitter-refactor'
 		use 'nvim-treesitter/nvim-treesitter-textobjects'
 		use 'wbthomason/packer.nvim'
     use '/usr/local/opt/fzf'
-    -- use 'hrsh7th/nvim-compe'
     use 'justinmk/vim-sneak'
-    -- use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
     use 'tommcdo/vim-lion'
@@ -49,5 +40,11 @@ return require('packer').startup(function()
 		use {'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
 		use {'hoob3rt/lualine.nvim' }
 		use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
-		use { 'neoclide/coc.nvim', branch = 'release' }
+		use {'neoclide/coc.nvim', branch = 'release' }
 end)
+
+require('plugin.treesitter')
+require('plugin.vim-sneak')
+require('plugin.lualine')
+require('plugin.coc')
+

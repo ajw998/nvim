@@ -9,6 +9,7 @@ local g = vim.o
 local window = vim.wo
 -- Binding: Buffer-local options
 local buffer = vim.bo
+local opt = vim.opt
 
 -- Automatically read file if changed outside vim
 g.autoread = true
@@ -27,7 +28,7 @@ g.ignorecase = true
 -- Disable this because we will create our own status line
 g.laststatus = 2
 -- Prevent screen from redrawing while executing macro
-g.lazyredraw = true
+opt.lazyredraw = true
 -- Strings to use in 'list' mode and for the :list command
 -- g.listchars = 'tab:→,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨↲'
 -- Tenths of a second to show the matching parens. This is set only if
