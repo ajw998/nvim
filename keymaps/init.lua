@@ -1,6 +1,7 @@
+require "keymaps.blame"
+
 -- Keymaps
 local map = vim.api.nvim_set_keymap
-
 
 -- Copy current file name to system clipboard
 function _G.copy_file_name()
@@ -15,7 +16,6 @@ function _G.copy_file_name()
 		end
 end
 
-
 -- Remove <Space> as leader key in normal mode, then
 -- set comma <,> as leader key
 map('n', '<Space>', '', {})
@@ -28,6 +28,7 @@ map('n', '<leader>R', ':reg <CR>', { noremap = true })
 -- Copy current file path
 -- map('n', '<leader>cp', ':let @*=expand("%:p") <CR>', {})
 map('n', '<leader>cp', ':lua copy_file_name() <CR>', { silent = true })
+map('n', '<leader>pr', ':lua fetch_pr() <CR>', { silent = true })
 -- Self-explanatory
 map('i', 'jk', '<Esc>', {})
 -- Map semi-colon to colon
