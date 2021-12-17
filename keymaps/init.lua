@@ -7,13 +7,13 @@ local map = vim.api.nvim_set_keymap
 function _G.copy_file_name()
   local filename = vim.fn.expand("%")
   local repo_name = vim.fn.system("basename `git rev-parse --show-toplevel`"):gsub("^%s*(.-)%s*$", "%1")
-	if vim.v.shell_error == 1 then
-			-- If not in git repository, simply copy the filename
-			vim.fn.setreg("*", vim.fn.expand("%p"))
-		else
-			local full_name = table.concat({ repo_name, "/", filename })
-			vim.fn.setreg("*", full_name)
-		end
+  if vim.v.shell_error == 1 then
+      -- If not in git repository, simply copy the filename
+      vim.fn.setreg("*", vim.fn.expand("%p"))
+    else
+      local full_name = table.concat({ repo_name, "/", filename })
+      vim.fn.setreg("*", full_name)
+    end
 end
 
 -- Remove <Space> as leader key in normal mode, then

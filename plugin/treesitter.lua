@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-	textobjects = {
+  textobjects = {
     select = {
       enable = true,
 
@@ -16,23 +16,23 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   ensure_installed = {
-				"bash",
-				"css",
-				"go",
-				"html",
-				"javascript",
-				"json",
-				"jsonc",
-				"lua",
-				"query",
-				"swift",
-				"tsx",
-				"typescript",
-				"yaml",
+        "bash",
+        "css",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "jsonc",
+        "lua",
+        "query",
+        "swift",
+        "tsx",
+        "typescript",
+        "yaml",
     },
-	indent = {
-		enable = true
-	};
+  indent = {
+    enable = true
+  };
     playground = {
     enable = true,
     disable = {},
@@ -52,10 +52,10 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   refactor = {
-		highlight_current_scope = {
-			enable = false
-		},
-		navigation = {
+    highlight_current_scope = {
+      enable = false
+    },
+    navigation = {
       enable = true,
       keymaps = {
         list_definitions = "gD",
@@ -71,7 +71,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-		additional_vim_regex_highlighting=false,
+    -- additional_vim_regex_highlighting=false,
   },
   query_linter = {
     enable = true,

@@ -14,7 +14,7 @@ require'compe'.setup {
   source = {
     path          = true;
     buffer        = {
-			ignored_filetypes = {'markdown'},
+      ignored_filetypes = {'markdown'},
       enable      = true,
       priority    = 1,     -- last priority
     },

@@ -5,6 +5,11 @@ local on_attach = function(client, bufnr)
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+  -- Removes in-line virtual texts
+  vim.diagnostic.config {
+    virtual_text = false,
+  }
+
   -- Mappings.
   local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -53,13 +58,13 @@ local sumneko_root_path = os.getenv('HOME')..'/bin/lua-language-server'
 local sumneko_binary = sumneko_root_path..'/bin/macOS/lua-language-server'
 
 nvim_lsp.sumneko_lua.setup {
-	cmd = { sumneko_binary, '-E', sumneko_root_path..'/main.lua' };
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { 'vim' },
-			}
-		}
-	};
-	on_attach = on_attach
+  cmd = { sumneko_binary, '-E', sumneko_root_path..'/main.lua' };
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      }
+    }
+  };
+  on_attach = on_attach
 }

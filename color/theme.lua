@@ -14,29 +14,29 @@ end
 
 function theme.base_syntax()
     local base_syntax = {
-		Search       = { fg = "#2d2a2e", bg=theme.yellow };
-		IncSearch    = { fg = "#2d2a2e", bg=theme.yellow };
-		ErrorMsg     = { fg = "NONE", bg="NONE" };
-		PMenu        = { fg = theme.lightgrey, bg="NONE" };
-		PMenuSel     = { fg = "#282a3a", bg=theme.yellow };
-		Comment      = { fg = "#727072" };
-		SignColumn   = { fg = "NONE", bg = "NONE" };
-		ColorColumn  = { fg = "NONE", bg = "NONE" };
-		Cursor       = { fg = theme.white };
-		CursorLineNR = { fg = theme.yellow };
-		Identifier   = { fg = theme.red };
-		Keyword      = { fg = theme.red };
-		Title        = { fg = theme.white };
-		LineNr       = { fg = "#696d77" };
-		MatchParen   = { fg = theme.red, style="underline" };
-		NonText      = { fg = "#696769" };
-		Number       = { fg = theme.purple };
-		Operator     = { fg = theme.red };
-		Statement    = { fg = theme.red };
-		StatusLine   = { fg = theme.white, bg="#696769" };
-		String       = { fg = theme.yellow };
-		VertSplit    = { fg = "#696769", bg = "NONE" };
-		Visual       = { bg = "#323343" };
+    Search       = { fg = "#2d2a2e", bg=theme.yellow };
+    IncSearch    = { fg = "#2d2a2e", bg=theme.yellow };
+    ErrorMsg     = { fg = "NONE", bg="NONE" };
+    PMenu        = { fg = theme.lightgrey, bg="NONE" };
+    PMenuSel     = { fg = "#282a3a", bg=theme.yellow };
+    Comment      = { fg = "#727072" };
+    SignColumn   = { fg = "NONE", bg = "NONE" };
+    ColorColumn  = { fg = "NONE", bg = "NONE" };
+    Cursor       = { fg = theme.white };
+    CursorLineNR = { fg = theme.yellow };
+    Identifier   = { fg = theme.red };
+    Keyword      = { fg = theme.red };
+    Title        = { fg = theme.white };
+    LineNr       = { fg = "#696d77" };
+    MatchParen   = { fg = theme.red, style="underline" };
+    NonText      = { fg = "#696769" };
+    Number       = { fg = theme.purple };
+    Operator     = { fg = theme.red };
+    Statement    = { fg = theme.red };
+    StatusLine   = { fg = theme.white, bg="#696769" };
+    String       = { fg = theme.yellow };
+    VertSplit    = { fg = "#696769", bg = "NONE" };
+    Visual       = { bg = "#323343" };
 }
     return base_syntax
 end
@@ -59,9 +59,11 @@ function theme.load_plugin_syntax()
       TSProperty                       = { fg = theme.white };
       TSLiteral                        = { fg = theme.white };
       TSType                           = { fg = theme.teal };
-			TSTypeBuiltin                    = { fg = theme.teal };
+      TSTypeBuiltin                    = { fg = theme.teal };
       TSTitle                          = { fg = theme.white };
-      LspDiagnosticsDefaultWarning     = { fg = theme.orange };
+      DiagnosticError                  = { fg = theme.red };
+      DiagnosticWarn                   = { fg = theme.orange };
+      DiagnosticHint                   = { fg = theme.teal };
       LspDiagnosticsVirtualTextWarning = { fg = theme.orange };
       LspDiagnosticsVirtualTextError   = { fg = theme.red };
       LspReferenceText                 = { fg = "#282a3a",  bg = theme.yellow };
@@ -84,7 +86,7 @@ function theme.colourscheme()
   if vim.fn.exists('syntax_on') then
     vim.api.nvim_command('syntax reset')
   end
-  vim.o.background = 'dark' 
+  vim.o.background = 'dark'
   vim.o.termguicolors = true
   local syntax = theme.base_syntax()
   for group,colors in pairs(syntax) do
