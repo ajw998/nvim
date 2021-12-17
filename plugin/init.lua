@@ -41,6 +41,7 @@ require('packer').startup(function()
     use {'hoob3rt/lualine.nvim' }
     use {'neovim/nvim-lspconfig' }
     use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
+    use { 'ms-jpq/coq_nvim', branch = 'coq' }
     -- use {'neoclide/coc.nvim', branch = 'release' }
 end)
 

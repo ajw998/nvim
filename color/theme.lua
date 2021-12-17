@@ -69,6 +69,9 @@ function theme.load_plugin_syntax()
       LspReferenceText                 = { fg = "#282a3a",  bg = theme.yellow };
       LspReferenceRead                 = { fg = "#282a3a", bg  = theme.yellow };
       LspReferenceWrite                = { bg = theme.yellow };
+      DiffAdd                          = { fg = theme.lightgreen };
+      DiffChange                       = { fg = theme.yellow };
+      DiffDelete                       = { fg = theme.red };
     }
     return plugin_syntax
 end
