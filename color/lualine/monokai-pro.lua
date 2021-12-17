@@ -3,7 +3,8 @@ local theme = require'color.monokai'.colors
 return {
   normal = {
     a = {bg = theme.lightgreen, fg = theme.black, gui = 'bold'},
-    c = { bg = '', fg = '', gui = 'bold'},
+    c = { bg = 'NONE', fg = 'NONE', gui = 'bold'},
+    b = { bg = 'NONE', fg = 'NONE'},
   },
   insert = {
     a = {bg = theme.teal, fg = theme.black, gui = 'bold'},

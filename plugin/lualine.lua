@@ -2,7 +2,7 @@ require"lualine".setup{
   options= {
     section_separators = '',
     component_separators = '',
-    icons_enabled = false,
+    icons_enabled = true,
     theme=require'color.lualine.monokai-pro'
   },
   extensions = {"fzf", "fugitive"},
@@ -18,7 +18,8 @@ require"lualine".setup{
           modified = 'DiffChange', -- changes diff's modified color
           removed  = 'DiffDelete', -- changes diff's removed color you
         },
-        symbols = {added = '增', modified = '改', removed = '刪'}, -- changes diff symbols
+				-- Need to add space after each icon
+        symbols = {added = ' ', modified = ' ', removed = ' '}, -- changes diff symbols
         source = nil, -- A function that works as a data source for diff.
                       -- it must return a table like
                       -- {added = add_count, modified = modified_count, removed = removed_count }
@@ -37,13 +38,16 @@ require"lualine".setup{
         info  = 'DiagnosticInfo',  -- changes diagnostic's info color
         hint  = 'DiagnosticHint',  -- changes diagnostic's hint color
       },
-      symbols = { error = '錯', warn = '戒', info = '吿', hint = '點' },
+      symbols = { error = ' ', warn = ' ', info = ' ', hint = 'ﯦ ' },
       colored = true, -- displays diagnostics status in color if set to true
 			update_in_insert = false,
       always_visible = false, -- Show diagnostics even if count is 0, boolean or function returning boolean
+			padding = 2
     }
 		},
-	 lualine_y={},
+	 lualine_y={
+			{ 'filetype', color = { bg = "none", fg="none" } }
+		},
 	 lualine_z={'location'},
   },
 }

@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
     virtual_text = false,
   }
 
-	-- Define custom diagnostic signs
+  -- Define custom diagnostic signs
   vim.fn.sign_define('DiagnosticSignError', { text = '✘', texthl = 'DiagnosticError' })
   vim.fn.sign_define('DiagnosticSignWarn', { text = '☛', texthl = 'DiagnosticWarn' })
   vim.fn.sign_define('DiagnosticSignHint', { text = '★', texthl = 'DiagnosticHint' })
@@ -58,7 +58,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "gopls", "tsserver", "sumneko_lua", "bashls", "hls" }
+local servers = { "eslint", "gopls", "tsserver", "sumneko_lua", "bashls", "hls" }
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -77,4 +77,30 @@ nvim_lsp.sumneko_lua.setup {
     }
   };
   on_attach = on_attach
+}
+
+nvim_lsp.eslint.setup{
+  settings = {
+      codeAction = {
+        disableRuleComment = {
+          enable = true,
+          location = "separateLine"
+        },
+        showDocumentation = {
+          enable = true
+        }
+      },
+      codeActionOnSave = {
+        enable = true,
+        mode = "all"
+      },
+      format = true,
+      onIgnoredFiles = "off",
+      packageManager = "npm",
+      quiet = false,
+      rulesCustomizations = {},
+      run = "onType",
+      useESLintClass = false,
+      validate = "on",
+  }
 }

@@ -38,16 +38,13 @@ require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use {'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
-    use {'hoob3rt/lualine.nvim' }
+    use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true} }
     use {'neovim/nvim-lspconfig' }
     use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
     use { 'ms-jpq/coq_nvim', branch = 'coq' }
 		use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-    -- use {'neoclide/coc.nvim', branch = 'release' }
 end)
 
 require('plugin.treesitter')
 require('plugin.vim-sneak')
 require('plugin.lualine')
--- require('plugin.coc')
-
