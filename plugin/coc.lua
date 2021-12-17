@@ -1,6 +1,5 @@
 local map = vim.api.nvim_set_keymap
 
-map('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { expr = true })
 map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true })
 map('n', '[c', '<Plug>(coc-diagnostic-prev)', { noremap = false})
 map('n', ']c', '<Plug>(coc-diagnostic-next)', { noremap = false})

@@ -1,4 +1,9 @@
 local nvim_lsp = require('lspconfig')
+
+-- Auto-start COQ nvim
+-- This plugin is crazy fast
+vim.g.coq_settings = { auto_start = 'shut-up' }
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -10,11 +15,12 @@ local on_attach = function(client, bufnr)
     virtual_text = false,
   }
 
-  vim.fn.sign_define('DiagnosticSignError', { text = '✘' })
-  vim.fn.sign_define('DiagnosticSignWarn', { text = '☛' })
-  vim.fn.sign_define('DiagnosticSignHint', { text = '💡' })
+	-- Define custom diagnostic signs
+  vim.fn.sign_define('DiagnosticSignError', { text = '✘', texthl = 'DiagnosticError' })
+  vim.fn.sign_define('DiagnosticSignWarn', { text = '☛', texthl = 'DiagnosticWarn' })
+  vim.fn.sign_define('DiagnosticSignHint', { text = '★', texthl = 'DiagnosticHint' })
 
--- Mappings.
+-- Mappings
   local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)

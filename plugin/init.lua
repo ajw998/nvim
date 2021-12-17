@@ -42,6 +42,7 @@ require('packer').startup(function()
     use {'neovim/nvim-lspconfig' }
     use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
     use { 'ms-jpq/coq_nvim', branch = 'coq' }
+		use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
     -- use {'neoclide/coc.nvim', branch = 'release' }
 end)
 
