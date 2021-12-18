@@ -33,7 +33,8 @@ require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
     use 'tommcdo/vim-lion'
-    use 'tpope/vim-commentary'
+    -- use 'tpope/vim-commentary'
+		use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
     use 'ggandor/lightspeed.nvim'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
@@ -49,3 +50,4 @@ end)
 require('plugin.treesitter')
 require('plugin.vim-sneak')
 require('plugin.lualine')
+require('Comment').setup{}
