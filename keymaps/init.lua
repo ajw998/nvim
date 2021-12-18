@@ -40,8 +40,8 @@ map('n', '<leader><space>', ':let@/=""<CR>', { noremap = true })
 -- Close buffer
 map('n', '<leader>x', ':bd <CR>', { noremap = true })
 -- Vim-sneak
-map('n', 'f', '<Plug>Sneak_s', {})
-map('n', 'F', '<Plug>Sneak_S', {})
+map('n', 'f', '<Plug>Lightspeed_s', {})
+map('n', 'F', '<Plug>Lightspeed_S', {})
 -- ctags
 map('n', '\\r', ':!ctags -R . <CR>', { noremap = true})
 -- Yank to clipbaord
