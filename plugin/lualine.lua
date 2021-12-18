@@ -18,7 +18,7 @@ require"lualine".setup{
           modified = 'DiffChange', -- changes diff's modified color
           removed  = 'DiffDelete', -- changes diff's removed color you
         },
-				-- Need to add space after each icon
+        -- Need to add space after each icon
         symbols = {added = ' ', modified = ' ', removed = ' '}, -- changes diff symbols
         source = nil, -- A function that works as a data source for diff.
                       -- it must return a table like
@@ -26,8 +26,8 @@ require"lualine".setup{
                       -- Or nil on failure. Count <= 0 won't be displayed.
       },
    },
-	 lualine_x={
-		  {
+   lualine_x={
+      {
       'diagnostics',
       sources = {'nvim_diagnostic'},
       -- displays diagnostics from defined severity
@@ -40,14 +40,14 @@ require"lualine".setup{
       },
       symbols = { error = ' ', warn = ' ', info = ' ', hint = 'ﯦ ' },
       colored = true, -- displays diagnostics status in color if set to true
-			update_in_insert = false,
+      update_in_insert = false,
       always_visible = false, -- Show diagnostics even if count is 0, boolean or function returning boolean
-			padding = 2
+      padding = 2
     }
-		},
-	 lualine_y={
-			{ 'filetype', color = { bg = "none", fg="none" } }
-		},
-	 lualine_z={'location'},
+    },
+   lualine_y={
+      { 'filetype', color = { bg = "none", fg="none" } }
+    },
+   lualine_z={'location'},
   },
 }

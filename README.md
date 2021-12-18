@@ -16,3 +16,5 @@
 ## Notes
 
 Currently uses JetBrain Mono Nerd Font. Check out installation instructions [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/font-info.md). 
+
+Treesitter is disable if number of lines exceed `5000`.

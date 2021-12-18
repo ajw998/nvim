@@ -16,6 +16,9 @@ local function nvim_create_augroups(definitions)
 end
 
 local autocmd = {
+  optimisation = { 
+    {'BufEnter', '*', 'lua disable_language_plugins()' },
+  },
   yank_highlight = {
     { 'TextYankPost', '*', 'silent! lua vim.highlight.on_yank{ higroup="IncSearch", timeout=500 }' }
   };
@@ -44,7 +47,7 @@ local autocmd = {
     {'BufEnter,BufNewFile,BufRead', '*.tsx', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' }
   };
   javascript = {
-    {'BufEnter,BufNewFile,BufRead', '*.js', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' }
+    {'BufNewFile', '*.js', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' },
   }
 }
 

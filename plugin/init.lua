@@ -34,7 +34,7 @@ require('packer').startup(function()
     use 'nvim-treesitter/playground'
     use 'tommcdo/vim-lion'
     use 'tpope/vim-commentary'
-		use 'ggandor/lightspeed.nvim'
+    use 'ggandor/lightspeed.nvim'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
@@ -43,7 +43,7 @@ require('packer').startup(function()
     use {'neovim/nvim-lspconfig' }
     use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
     use { 'ms-jpq/coq_nvim', branch = 'coq' }
-		use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 end)
 
 require('plugin.treesitter')
