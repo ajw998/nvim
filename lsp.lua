@@ -16,7 +16,7 @@ local on_attach = function(client, bufnr)
   }
 
   -- Define custom diagnostic signs
-  vim.fn.sign_define('DiagnosticSignError', { text = '✘', texthl = 'DiagnosticError' })
+  vim.fn.sign_define('DiagnosticSignError',{ text = '✘', texthl = 'DiagnosticError' })
   vim.fn.sign_define('DiagnosticSignWarn', { text = '☛', texthl = 'DiagnosticWarn' })
   vim.fn.sign_define('DiagnosticSignHint', { text = '★', texthl = 'DiagnosticHint' })
 

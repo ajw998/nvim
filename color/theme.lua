@@ -72,11 +72,16 @@ function theme.load_plugin_syntax()
       DiffAdd                          = { fg = theme.lightgreen };
       DiffChange                       = { fg = theme.yellow };
       DiffDelete                       = { fg = theme.red };
+      ActiveTabNum                     = { fg = theme.lightgreen, bg = theme.visualblack, style = 'bold' },
+      InactiveTabNum                   = { fg = theme.red },
+      TabLineSel                       = { fg = theme.lightgreen, bg = theme.visualblack, style = 'bold' },
+      TabLineFill                      = { bg = theme.black },
+      TabLine                          = { bg = theme.black, fg = theme.lightgrey }
     }
     return plugin_syntax
 end
 
-async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
+_G.async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
   local syntax = theme.load_plugin_syntax()
   for group,colors in pairs(syntax) do
     theme.highlight(group,colors)
