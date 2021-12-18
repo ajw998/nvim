@@ -3,7 +3,7 @@
 
 -- Do not import plugins if Neovim is run as root,
 -- or if Neovim version is < 0.5+
-if require'utils'.is_root() or not require'utils'.is_neovim_05() then
+if require "utils".is_root() or not require "utils".is_neovim_05() then
     return
 end
 
@@ -22,32 +22,36 @@ if not is_packer_installed then
     is_packer_installed = 1
 end
 
-require('packer').startup(function()
-    local use = require'packer'.use
-    -- Packer can manage itself
-    use 'nvim-treesitter/nvim-treesitter-refactor'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use 'wbthomason/packer.nvim'
-    use '/usr/local/opt/fzf'
-    -- use 'justinmk/vim-sneak'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/playground'
-    use 'tommcdo/vim-lion'
-    -- use 'tpope/vim-commentary'
-		use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
-    use 'ggandor/lightspeed.nvim'
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-surround'
-    use 'tpope/vim-unimpaired'
-    use {'junegunn/fzf.vim', require = { 'junegunn/fzf', run = './install --bin' } }
-    use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true} }
-    use {'neovim/nvim-lspconfig' }
-    use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
-    use { 'ms-jpq/coq_nvim', branch = 'coq' }
-    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-end)
+require("packer").startup(
+    function()
+        local use = require "packer".use
+        -- Packer can manage itself
+        use "nvim-treesitter/nvim-treesitter-refactor"
+        use "nvim-treesitter/nvim-treesitter-textobjects"
+        use "nvim-treesitter/nvim-treesitter"
+        use "nvim-treesitter/playground"
+        use "wbthomason/packer.nvim"
+        use "/usr/local/opt/fzf"
+        use "tommcdo/vim-lion"
+        -- Replaces vim-commentary
+        use {"numToStr/Comment.nvim", config = function()
+                require("Comment").setup()
+            end}
+        -- Replaces vim-sneak
+        use "ggandor/lightspeed.nvim"
+        use "tpope/vim-fugitive"
+        use "tpope/vim-surround"
+        use "tpope/vim-unimpaired"
+        use {"junegunn/fzf.vim", require = {"junegunn/fzf", run = "./install --bin"}}
+        use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+        use {"neovim/nvim-lspconfig"}
+        -- use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
+        use {"ms-jpq/coq_nvim", branch = "coq"}
+        use {"ms-jpq/coq.artifacts", branch = "artifacts"}
+    end
+)
 
-require('plugin.treesitter')
-require('plugin.vim-sneak')
-require('plugin.lualine')
-require('Comment').setup{}
+require("plugin.treesitter")
+require("plugin.vim-sneak")
+require("plugin.lualine")
+require("Comment").setup {}
