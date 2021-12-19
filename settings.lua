@@ -62,6 +62,7 @@ window.linebreak = true
 -- Disable spell check
 window.spell = false
 -- Relative line number
+window.number = true
 window.relativenumber = true
 -- Change how text is displayed
 window.wrap = true

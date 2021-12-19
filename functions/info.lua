@@ -1,0 +1,3 @@
+-- Fetch information
+-- Internal functions to calculate floating window size
+-- Use nvim_open_win(buf, true, { options }) to open a floating window
