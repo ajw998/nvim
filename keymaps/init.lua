@@ -12,7 +12,7 @@ vim.g.mapleader = ','
 map('n', '<leader>,', ':e ~/.config/nvim/init.lua <CR>', {})
 -- Open register
 map('n', '<leader>R', ':reg <CR>', { noremap = true })
--- Copy current file path
+-- Current file path
 map('n', '<leader>cpa', ':lua copy_file_name(3) <CR>', { silent = true })
 map('n', '<leader>cpg', ':lua copy_file_name() <CR>', { silent = true })
 map('n', '<leader>pr', ':lua fetch_pr() <CR>', { silent = true })
@@ -33,12 +33,11 @@ map('n', 'F', '<Plug>Lightspeed_S', {})
 map('n', '\\r', ':!ctags -R . <CR>', { noremap = true})
 -- Yank to clipbaord
 map('v', '<leader>y', '"*y', { noremap = true })
--- Searh for files from current working directory
+-- Directory and File browser
 map('n', '<leader>t', ':Files <CR>', { noremap = true })
--- Open buffer list
+-- Buffer
 map('n', '<leader>b', ':Buffers<CR>', { noremap = true })
--- List all Windows
+-- Windows
 map('n', '<leader>w', ':Window<CR>', { noremap = true })
 map('n', '<leader>wn', ':tabnew<CR>', { noremap = true })
 map('n', '<leader>wc', ':tabclose<CR>', { noremap = true })
-

@@ -76,7 +76,8 @@ function theme.load_plugin_syntax()
       InactiveTabNum                   = { fg = theme.red },
       TabLineSel                       = { fg = theme.lightgreen, bg = theme.visualblack, style = 'bold' },
       TabLineFill                      = { bg = theme.black },
-      TabLine                          = { bg = theme.black, fg = theme.lightgrey }
+      TabLine                          = { bg = theme.black, fg = theme.lightgrey },
+      qfFileName                       = { fg = theme.white, style = 'bold' },
     }
     return plugin_syntax
 end
