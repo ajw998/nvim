@@ -78,6 +78,9 @@ function theme.load_plugin_syntax()
       TabLineFill                      = { bg = theme.black },
       TabLine                          = { bg = theme.black, fg = theme.lightgrey },
       qfFileName                       = { fg = theme.white, style = 'bold' },
+      Todo                             = { fg = theme.yellow, style = 'bold' },
+      gitcommitType                    = { fg = theme.lightgreen };
+      gitcommitBranch                  = { fg = theme.yellow, style = 'bold' };
     }
     return plugin_syntax
 end
