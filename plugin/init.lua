@@ -48,6 +48,7 @@ require("packer").startup(
         -- use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
         use {"ms-jpq/coq_nvim", branch = "coq"}
         use {"ms-jpq/coq.artifacts", branch = "artifacts"}
+        use {"fatih/vim-go", requires = { run = ":GoUpdateBinaries" }, ft = { "go" }}
     end
 )
 
