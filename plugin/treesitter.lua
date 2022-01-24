@@ -1,9 +1,9 @@
 require "nvim-treesitter.configs".setup {
     textobjects = {
         select = {
-            enable = true,
+            enable = false,
             -- Automatically jump forward to textobj, similar to targets.vim
-            lookahead = true,
+            lookahead = false,
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
@@ -13,23 +13,8 @@ require "nvim-treesitter.configs".setup {
             }
         }
     },
-    ensure_installed = {
-        "bash",
-        "css",
-        "go",
-        "html",
-        "javascript",
-        "json",
-        "jsonc",
-        "lua",
-        "query",
-        "swift",
-        "tsx",
-        "typescript",
-        "yaml"
-    },
     indent = {
-        enable = true
+        enable = false
     },
     playground = {
         enable = false,
@@ -54,7 +39,7 @@ require "nvim-treesitter.configs".setup {
             enable = false
         },
         navigation = {
-            enable = true,
+            enable = false,
             keymaps = {
                 list_definitions = "gD",
                 list_definitions_toc = "gnT"
@@ -69,7 +54,10 @@ require "nvim-treesitter.configs".setup {
     },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false
+        additional_vim_regex_highlighting = false,
+        disable = function(lang, bufnr)
+          return lang == "c" or vim.api.nvim_buf_line_count(bufnr) > 3000
+        end
     },
     query_linter = {
         enable = false,

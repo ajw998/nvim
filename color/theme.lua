@@ -79,8 +79,16 @@ function theme.load_plugin_syntax()
       TabLine                          = { bg = theme.black, fg = theme.lightgrey },
       qfFileName                       = { fg = theme.white, style = 'bold' },
       Todo                             = { fg = theme.yellow, style = 'bold' },
-      gitcommitType                    = { fg = theme.lightgreen };
-      gitcommitBranch                  = { fg = theme.yellow, style = 'bold' };
+      gitcommitType                    = { fg = theme.lightgreen },
+      gitcommitBranch                  = { fg = theme.yellow, style = 'bold' },
+      cType                            = { fg = theme.teal, style = 'bold' },
+      cConstant                        = { fg = theme.red },
+      cInclude                         = { fg = theme.red },
+      cBracket                         = { fg = theme.red },
+      cPragma                          = { fg = theme.red },
+      cPreProc                         = { fg = theme.red },
+      cPreCondit                       = { fg = theme.red },
+      cBlock                           = { fg = theme.yellow };
     }
     return plugin_syntax
 end
