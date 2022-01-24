@@ -11,6 +11,9 @@ local window = vim.wo
 local buffer = vim.bo
 local opt = vim.opt
 
+-- Use C highlighting instead of cpp for header files
+vim.g.c_syntax_for_h = true
+
 -- Automatically read file if changed outside vim
 g.autoread = true
 -- List of directories for the backup file
