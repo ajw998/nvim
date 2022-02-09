@@ -55,8 +55,8 @@ require "nvim-treesitter.configs".setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
-        disable = function(lang, bufnr)
-          return lang == "c" or vim.api.nvim_buf_line_count(bufnr) > 3000
+        disable = function(_, bufnr)
+          return vim.api.nvim_buf_line_count(bufnr) > 3000
         end
     },
     query_linter = {
