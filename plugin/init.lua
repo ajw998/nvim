@@ -48,7 +48,7 @@ require("packer").startup(
         -- use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
         use {"ms-jpq/coq_nvim", branch = "coq"}
         use {"ms-jpq/coq.artifacts", branch = "artifacts"}
-        use {"fatih/vim-go", requires = { run = ":GoUpdateBinaries" }, ft = { "go" }}
+        use {"fatih/vim-go", requires = { run = ":GoUpdateBinaries" }, ft = { "go" }, disable = true}
     end
 )
 
@@ -56,3 +56,4 @@ require("plugin.treesitter")
 require("plugin.vim-sneak")
 require("plugin.lualine")
 require("Comment").setup {}
+require("lightspeed").setup{ ignore_case = true }
