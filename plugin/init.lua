@@ -26,12 +26,9 @@ require("packer").startup(
     function()
         local use = require "packer".use
         -- Packer can manage itself
-        use "nvim-treesitter/nvim-treesitter-refactor"
-        use "nvim-treesitter/nvim-treesitter-textobjects"
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
         use "wbthomason/packer.nvim"
-        use "/usr/local/opt/fzf"
         use "tommcdo/vim-lion"
         -- Replaces vim-commentary
         use {"numToStr/Comment.nvim", config = function()
@@ -42,6 +39,7 @@ require("packer").startup(
         use "tpope/vim-fugitive"
         use "tpope/vim-surround"
         use "tpope/vim-unimpaired"
+        use "junegunn/fzf"
         use {"junegunn/fzf.vim", require = {"junegunn/fzf", run = "./install --bin"}}
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use {"neovim/nvim-lspconfig"}
