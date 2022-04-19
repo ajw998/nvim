@@ -37,8 +37,4 @@ map('v', '<leader>y', '"*y', { noremap = true })
 map('n', '<leader>t', ':Files <CR>', { noremap = true })
 -- Buffer
 map('n', '<leader>b', ':Buffers<CR>', { noremap = true })
--- Windows
-map('n', '<leader>w', ':Window<CR>', { noremap = true })
-map('n', '<leader>wn', ':tabnew<CR>', { noremap = true })
-map('n', '<leader>wc', ':tabclose<CR>', { noremap = true })
 map('n', '<leader>sy', ':echo synIDattr(synID(line("."),col("."),0),"name") <CR>', { noremap = true })
