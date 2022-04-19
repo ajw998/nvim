@@ -25,11 +25,11 @@ end
 require("packer").startup(
     function()
         local use = require "packer".use
-        -- Packer can manage itself
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
         use "wbthomason/packer.nvim"
         use "tommcdo/vim-lion"
+        use { "kovisoft/slimv", ft = { "lisp" }}
         -- Replaces vim-commentary
         use {"numToStr/Comment.nvim", config = function()
                 require("Comment").setup()
@@ -53,5 +53,6 @@ require("packer").startup(
 require("plugin.treesitter")
 require("plugin.vim-sneak")
 require("plugin.lualine")
+require("plugin.slimv")
 require("Comment").setup {}
 require("lightspeed").setup{ ignore_case = true }
