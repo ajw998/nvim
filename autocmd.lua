@@ -16,17 +16,17 @@ local function nvim_create_augroups(definitions)
 end
 
 local autocmd = {
-  -- optimisation = {
-  --   {'BufEnter', '*', 'lua disable_language_plugins()' },
-  -- },
   yank_highlight = {
     {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank{ higroup="IncSearch", timeout=500 }'}
   };
   go = {
-    {'BufEnter,BufNewFile', '*.go', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2'}
+    {'BufEnter,BufNewFile', '*.go', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab'}
   };
   json = {
-    {'BufEnter,BufNewFile,BufRead', '*.json', 'setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent' }
+    {'BufEnter,BufNewFile,BufRead', '*.json', 'setlocal tabstop=2 softtabstop=4 shiftwidth=2 expandtab autoindent' }
+  };
+  zsh = {
+    {'BufEnter,BufNewFile', '*.lua', 'setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2'}
   };
   lua = {
     {'BufEnter,BufNewFile', '*.lua', 'setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2'}
@@ -41,7 +41,8 @@ local autocmd = {
     {'BufEnter,BufNewFile,BufRead', '*.scss', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' }
   };
   typescript = {
-    {'BufEnter,BufNewFile,BufRead', '*.ts', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' }
+    {'BufEnter,BufNewFile,BufRead', '*.ts,*.js', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' },
+    { 'BufWritePost', '*.ts', 'EslintFixAll' }
   };
   typescriptreact={
     {'BufEnter,BufNewFile,BufRead', '*.tsx', 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab autoindent' }
