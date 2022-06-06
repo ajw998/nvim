@@ -36,7 +36,7 @@ function theme.base_syntax()
     StatusLine   = { fg = theme.grey1, bg=theme.grey11 };
     String       = { fg = theme.yellow };
     VertSplit    = { fg = theme.grey14, bg = "NONE" };
-    Visual       = { bg = "#323343" };
+    Visual       = { bg = theme.grey14 };
 }
     return base_syntax
 end

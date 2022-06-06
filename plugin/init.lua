@@ -44,9 +44,13 @@ require("packer").startup(
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use {"neovim/nvim-lspconfig"}
         -- use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
-        use {"ms-jpq/coq_nvim", branch = "coq"}
-        use {"ms-jpq/coq.artifacts", branch = "artifacts"}
         use {"fatih/vim-go", requires = { run = ":GoUpdateBinaries" }, ft = { "go" }, disable = true}
+        use 'neovim/nvim-lspconfig'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-cmdline'
+        use 'hrsh7th/nvim-cmp'
     end
 )
 
@@ -56,3 +60,4 @@ require("plugin.lualine")
 require("plugin.slimv")
 require("Comment").setup {}
 require("lightspeed").setup{ ignore_case = true }
+require("plugin.cmp")

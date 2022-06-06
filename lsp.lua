@@ -73,21 +73,6 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-local sumneko_root_path = os.getenv('HOME')..'/bin/lua-language-server'
-local sumneko_binary = sumneko_root_path..'/bin/macOS/lua-language-server'
-
-nvim_lsp.sumneko_lua.setup {
-  cmd = { sumneko_binary, '-E', sumneko_root_path..'/main.lua' };
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
-      }
-    }
-  };
-  on_attach = on_attach
-}
-
 nvim_lsp.eslint.setup{
   settings = {
       codeAction = {
