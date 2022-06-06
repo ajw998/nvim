@@ -1,9 +1,9 @@
 require"lualine".setup{
   options= {
-    section_separators = '',
+    section_separators = { left = '', right = '' },
     component_separators = '',
     icons_enabled = true,
-    theme=require'color.lualine.monokai-pro'
+    theme=require'color.lualine.theme'
   },
   extensions = {"fzf", "fugitive"},
   sections= {
