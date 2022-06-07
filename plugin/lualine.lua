@@ -1,6 +1,8 @@
+local theme = require'color.nord'.colors
+
 require"lualine".setup{
   options= {
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = ''},
     component_separators = '',
     icons_enabled = true,
     theme=require'color.lualine.theme'
@@ -30,15 +32,24 @@ require"lualine".setup{
       {
         'filename',
         file_status = true,
+        filetype_names = {
+          packer = 'Packer',
+          fzf = 'FZF',
+        }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
         path = 1,
 				shorting_target = 35,
+        symbols = {
+          modified = ' ●',      -- Text to show when the file is modified.
+          readonly = ' ',      -- Text to show when the file is non-modifiable or readonly.
+          unnamed = '[No Name]', -- Text to show for unnamed buffers.
+      }
       },
    },
    lualine_x={
       { 'filetype', color = { bg = "none", fg="none" } }
     },
    lualine_y={'location'},
-   lualine_z={
+   lualine_z= {
       {
         'diagnostics',
         sources = {'nvim_diagnostic'},

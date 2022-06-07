@@ -84,7 +84,7 @@ buffer.omnifunc='syntaxcomplete#Complete'
 buffer.synmaxcol=200
 
 -- Disable distribution plugins
-
+-- Results in faster startup time
 local disabled_built_ins = {
     "netrw",
     "netrwPlugin",
