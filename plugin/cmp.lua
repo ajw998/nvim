@@ -51,7 +51,7 @@ cmp.setup {
         return not (context.in_treesitter_capture "comment" == true or context.in_syntax_group "Comment")
     end,
     experimental = {
-        ghost_text = true,
+        ghost_text = false,
     },
     confirmation = {
         get_commit_characters = function()
