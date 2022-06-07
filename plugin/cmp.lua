@@ -76,8 +76,6 @@ cmp.setup {
         end,
     },
     mapping = {
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-q>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = false,
@@ -92,7 +90,7 @@ cmp.setup {
             else
                 fallback()
             end
-        end, { "i", "c" }),
+        end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function()
             if cmp.visible() then

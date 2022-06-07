@@ -22,11 +22,14 @@ if not is_packer_installed then
     is_packer_installed = 1
 end
 
+-- TODO Add packer nvim autoinstall
+-- Reference: https://github.com/thanhvule0310/dotfiles/blob/main/nvim/lua/plugins/init.lua
+
 require("packer").startup(
     function()
         local use = require "packer".use
         use "nvim-treesitter/nvim-treesitter"
-        use "nvim-treesitter/playground"
+        use { "nvim-treesitter/playground", disable = true }
         use "wbthomason/packer.nvim"
         use "tommcdo/vim-lion"
         use { "kovisoft/slimv", ft = { "lisp" }}
@@ -34,7 +37,6 @@ require("packer").startup(
         use {"numToStr/Comment.nvim", config = function()
                 require("Comment").setup()
             end}
-        -- Replaces vim-sneak
         use "ggandor/lightspeed.nvim"
         use "tpope/vim-fugitive"
         use "tpope/vim-surround"
@@ -43,7 +45,6 @@ require("packer").startup(
         use {"junegunn/fzf.vim", require = {"junegunn/fzf", run = "./install --bin"}}
         use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use {"neovim/nvim-lspconfig"}
-        -- use {'neovimhaskell/haskell-vim', ft = { 'hs' }}
         use {"fatih/vim-go", requires = { run = ":GoUpdateBinaries" }, ft = { "go" }, disable = true}
         use 'neovim/nvim-lspconfig'
         use 'hrsh7th/cmp-nvim-lsp'
@@ -55,7 +56,6 @@ require("packer").startup(
 )
 
 require("plugin.treesitter")
-require("plugin.vim-sneak")
 require("plugin.lualine")
 require("plugin.slimv")
 require("Comment").setup {}

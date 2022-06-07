@@ -1,5 +1,3 @@
-require "keymaps.blame"
-
 -- Keymaps
 local map = vim.api.nvim_set_keymap
 
