@@ -51,7 +51,8 @@ cmp.setup {
         return not (context.in_treesitter_capture "comment" == true or context.in_syntax_group "Comment")
     end,
     experimental = {
-        ghost_text = false,
+        native_menu = false,
+        ghost_text = true,
     },
     confirmation = {
         get_commit_characters = function()
@@ -66,12 +67,16 @@ cmp.setup {
         keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
         keyword_length = 1,
     },
+    snippet = { 
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end
+    },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(_, vim_item)
             vim_item.menu = vim_item.kind
             vim_item.kind = kinds[vim_item.kind]
-
             return vim_item
         end,
     },
@@ -101,10 +106,10 @@ cmp.setup {
         end, { "i", "s" }),
     },
     sources = {
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", keyword_length = 3 },
         { name = "nvim_lua" },
         { name = "path" },
-        { name = "buffer" },
+        { name = "buffer", keyword_length = 5 },
     },
     preselect = cmp.PreselectMode.None,
 }
