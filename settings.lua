@@ -29,7 +29,7 @@ g.hlsearch = true
 g.ignorecase = true
 -- Whether last window will have a status line
 -- Disable this because we will create our own status line
-g.laststatus = 2
+g.laststatus = 3
 -- Prevent screen from redrawing while executing macro
 opt.lazyredraw = true
 -- Strings to use in 'list' mode and for the :list command
