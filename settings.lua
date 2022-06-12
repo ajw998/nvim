@@ -1,5 +1,7 @@
 local vim = vim
 
+vim.cmd('colorscheme nord')
+
 -- Get home directory path
 local homedir = os.getenv("HOME")
 
