@@ -1,11 +1,9 @@
-local theme = require'color.nord'.colors
-
 require"lualine".setup{
   options= {
     section_separators = { left = '', right = ''},
-    component_separators = '',
+    component_separators = { left = '', right = '' },
     icons_enabled = true,
-    theme=require'color.lualine.theme'
+    theme='nord'
   },
   extensions = {"fzf", "fugitive"},
   sections= {
@@ -16,12 +14,12 @@ require"lualine".setup{
         'diff',
         colored = true, -- displays diff status in color if set to true
         diff_color = {
-          added    = 'DiffAdd',    -- changes diff's added color
-          modified = 'DiffChange', -- changes diff's modified color
-          removed  = 'DiffDelete', -- changes diff's removed color you
+          added    = {  guifg="#A3BE8C" },
+          modified = {  guifg="#EBC8B8" },
+          removed =  {  guifg="#8F616A" },
         },
         -- Need to add space after each icon
-        symbols = {added = ' ', modified = ' ', removed = ' '}, -- changes diff symbols
+        symbols = {added = ' ', modified = '  ', removed = '  '}, -- changes diff symbols
         source = nil, -- A function that works as a data source for diff.
                       -- it must return a table like
                       -- {added = add_count, modified = modified_count, removed = removed_count }
@@ -62,7 +60,7 @@ require"lualine".setup{
           hint  = 'DiagnosticHint',  -- changes diagnostic's hint color
         },
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-        colored = true, -- displays diagnostics status in color if set to true
+        -- colored = true, -- displays diagnostics status in color if set to true
         update_in_insert = false,
         always_visible = false, -- Show diagnostics even if count is 0, boolean or function returning boolean
         padding = 2,
