@@ -1,9 +1,16 @@
+function get_syn_highlight(group, key)
+  local ui = {}
+  ui["gui"..key] = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID(group)), key.."#", "gui")
+  return ui
+end
+
 require"lualine".setup{
   options= {
     section_separators = { left = '', right = ''},
     component_separators = { left = '', right = '' },
     icons_enabled = true,
-    theme='nord'
+    -- theme='nord'
+    theme=require'plugin.lualine.nord-custom'
   },
   extensions = {"fzf", "fugitive"},
   sections= {
@@ -14,16 +21,13 @@ require"lualine".setup{
         'diff',
         colored = true, -- displays diff status in color if set to true
         diff_color = {
-          added    = {  guifg="#A3BE8C" },
-          modified = {  guifg="#EBC8B8" },
-          removed =  {  guifg="#8F616A" },
+          added    = get_syn_highlight("DiffAdd", "fg"),
+          modified = get_syn_highlight("DiffChange", "fg"),
+          removed = get_syn_highlight("DiffDelete", "fg") 
         },
         -- Need to add space after each icon
-        symbols = {added = ' ', modified = '  ', removed = '  '}, -- changes diff symbols
-        source = nil, -- A function that works as a data source for diff.
-                      -- it must return a table like
-                      -- {added = add_count, modified = modified_count, removed = removed_count }
-                      -- Or nil on failure. Count <= 0 won't be displayed.
+        symbols = { added = ' ', modified = '  ', removed = '  '},
+        source = nil,
       },
    },
    lualine_c = {
@@ -54,10 +58,10 @@ require"lualine".setup{
         -- displays diagnostics from defined severity
         sections = {'error', 'warn', 'hint', 'info'},
         diagnostics_color = {
-          error = 'DiagnosticError', -- changes diagnostic's error color
-          warn  = 'DiagnosticWarn',  -- changes diagnostic's warn color
-          info  = 'DiagnosticInfo',  -- changes diagnostic's info color
-          hint  = 'DiagnosticHint',  -- changes diagnostic's hint color
+          error = get_syn_highlight("DiagnosticError", "fg"),
+          warn = get_syn_highlight("DiagnosticWarn", "fg"),
+          info = get_syn_highlight("DiagnosticInfo", "fg"),
+          hint = get_syn_highlight("DiagnosticHint", "fg"),
         },
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         -- colored = true, -- displays diagnostics status in color if set to true
