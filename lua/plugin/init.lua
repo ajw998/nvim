@@ -12,13 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "nvim-treesitter/nvim-treesitter",
-  "phaazon/hop.nvim",
-  "tommcdo/vim-lion",
+  "ggandor/leap.nvim",
   { "kovisoft/slimv", ft = { "lisp" } },
   { "numToStr/Comment.nvim" },
   "tpope/vim-surround",
   "kshenoy/vim-signature",
-  "tpope/vim-unimpaired",
   {
   "ibhagwan/fzf-lua",
   config = function()
@@ -98,17 +96,6 @@ require("nvim-treesitter.configs").setup{
       additional_vim_regex_highlighting = false,
   },
 }
-require('hop').setup()
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-
-vim.keymap.set('n', 's', function()
-  hop.hint_char2({ direction = directions.AFTER_CURSOR })
-end, {remap=true})
-
-vim.keymap.set('n', 'S', function()
-  hop.hint_char2({ direction = directions.BEFORE_CURSOR})
-end, {remap=true})
-
 require('fzf-lua').setup({ 'max-perf' })
 require('neogit').setup{}
+require('leap').add_default_mappings()
