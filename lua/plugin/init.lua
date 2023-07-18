@@ -38,7 +38,7 @@ require("lazy").setup({
   "sainnhe/sonokai",
   "saadparwaiz1/cmp_luasnip",
   "onsails/lspkind.nvim",
-  { 'NeogitOrg/neogit', lazy=true, dependencies = 'nvim-lua/plenary.nvim' }
+  "brenoprata10/nvim-highlight-colors"
 }, {
   ui = {
     icons = {
@@ -97,5 +97,5 @@ require("nvim-treesitter.configs").setup{
   },
 }
 require('fzf-lua').setup({ 'max-perf' })
-require('neogit').setup{}
 require('leap').add_default_mappings()
+require('nvim-highlight-colors').setup {}
