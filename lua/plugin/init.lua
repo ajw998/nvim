@@ -38,7 +38,7 @@ require("lazy").setup({
   "sainnhe/sonokai",
   "saadparwaiz1/cmp_luasnip",
   "onsails/lspkind.nvim",
-  "brenoprata10/nvim-highlight-colors"
+  -- { "brenoprata10/nvim-highlight-colors", disable = true }
 }, {
   ui = {
     icons = {
@@ -98,4 +98,4 @@ require("nvim-treesitter.configs").setup{
 }
 require('fzf-lua').setup({ 'max-perf' })
 require('leap').add_default_mappings()
-require('nvim-highlight-colors').setup {}
+-- require('nvim-highlight-colors').setup {}
