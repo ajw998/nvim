@@ -44,7 +44,12 @@ require("lazy").setup({
     },
     spec = {
         -- import your plugin
-	{"m4xshen/autoclose.nvim", init = function() require("autoclose").setup() end},
+        {
+            "m4xshen/autoclose.nvim",
+            init = function()
+                require("autoclose").setup()
+            end,
+        },
         "numToStr/Comment.nvim",
         {
             "ggandor/leap.nvim",
@@ -70,7 +75,7 @@ require("lazy").setup({
             cmd = "FzfLua",
             keys = {
                 { "<leader>t", ":FzfLua files<cr>", desc = "Find files" },
-		{"<leader>rg", ":FzfLua live_grep<cr>", desc="Ripgrep"},
+                { "<leader>rg", ":FzfLua live_grep<cr>", desc = "Ripgrep" },
                 {
                     "<leader>st",
                     ":lua require('fzf-lua').grep({search='TODO|HACK|PERF|NOTE|FIX', no_esc=true})<CR>",
@@ -193,6 +198,12 @@ require("lazy").setup({
                 "williamboman/mason-lspconfig.nvim", -- lsp configuration for mason lsp
                 "hrsh7th/nvim-cmp",
                 {
+                    "lewis6991/gitsigns.nvim",
+                    init = function()
+                        require("gitsigns").setup()
+                    end,
+                },
+                {
                     "glepnir/lspsaga.nvim",
                     opts = {
                         code_action = {
@@ -243,8 +254,8 @@ require("lazy").setup({
                     vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
                 end
                 vim.diagnostic.config(opts.diagnostics)
-		require("lspconfig").clangd.setup({ on_attach = on_attach})
-		require("lspconfig").tsserver.setup({ on_attach = on_attach})
+                require("lspconfig").clangd.setup({ on_attach = on_attach })
+                require("lspconfig").tsserver.setup({ on_attach = on_attach })
             end,
         },
         {

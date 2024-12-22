@@ -42,16 +42,25 @@ map("n", "<leader><space>", ':let@/=""<CR>', { noremap = true })
 
 -- Filetypes
 -- -- Create an autocommand group to avoid duplicates
-vim.api.nvim_create_augroup('IndentationSettings', { clear = true })
+vim.api.nvim_create_augroup("IndentationSettings", { clear = true })
 
-vim.api.nvim_create_autocmd('FileType', {
-  group = 'IndentationSettings',
-  pattern = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'jsonc', 'json', 'html', 'css' },
-  callback = function()
-    -- Set indentation options
-    vim.bo.tabstop = 2        -- Number of spaces that a <Tab> counts for
-    vim.bo.shiftwidth = 2     -- Size of an indent
-    vim.bo.softtabstop = 2    -- Number of spaces that a <Tab> counts for while editing
-    vim.bo.expandtab = true   -- Use spaces instead of tabs
-  end,
+vim.api.nvim_create_autocmd("FileType", {
+    group = "IndentationSettings",
+    pattern = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "jsonc",
+        "json",
+        "html",
+        "css",
+    },
+    callback = function()
+        -- Set indentation options
+        vim.bo.tabstop = 2 -- Number of spaces that a <Tab> counts for
+        vim.bo.shiftwidth = 2 -- Size of an indent
+        vim.bo.softtabstop = 2 -- Number of spaces that a <Tab> counts for while editing
+        vim.bo.expandtab = true -- Use spaces instead of tabs
+    end,
 })
