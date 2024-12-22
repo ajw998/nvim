@@ -44,7 +44,7 @@ require("lazy").setup({
     },
     spec = {
         -- import your plugin
-	"m4xshen/autoclose.nvim",
+	{"m4xshen/autoclose.nvim", init = function() require("autoclose").setup() end},
         "numToStr/Comment.nvim",
         {
             "ggandor/leap.nvim",
@@ -70,6 +70,7 @@ require("lazy").setup({
             cmd = "FzfLua",
             keys = {
                 { "<leader>t", ":FzfLua files<cr>", desc = "Find files" },
+		{"<leader>rg", ":FzfLua live_grep<cr>", desc="Ripgrep"},
                 {
                     "<leader>st",
                     ":lua require('fzf-lua').grep({search='TODO|HACK|PERF|NOTE|FIX', no_esc=true})<CR>",
@@ -212,7 +213,7 @@ require("lazy").setup({
                 },
             },
             opts = {
-                servers = { "tsserver", "lua_ls", "vimls", "jsonls", "html", "cssls" },
+                servers = { "tsserver", "lua_ls", "vimls", "jsonls", "html", "cssls", "clangd" },
             },
             config = function(_, opts)
                 local on_attach = function(_, bufnr)
@@ -242,13 +243,8 @@ require("lazy").setup({
                     vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
                 end
                 vim.diagnostic.config(opts.diagnostics)
-                require("lspconfig").lua_ls.setup({
-                    on_attach = on_attach,
-                    name = "lua_ls",
-                    settings = {
-                        Lua = { hint = { enable = true }, diagnostics = { globals = { "vim" } } },
-                    },
-                })
+		require("lspconfig").clangd.setup({ on_attach = on_attach})
+		require("lspconfig").tsserver.setup({ on_attach = on_attach})
             end,
         },
         {
