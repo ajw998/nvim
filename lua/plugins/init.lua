@@ -43,7 +43,6 @@ require("lazy").setup({
         },
     },
     spec = {
-        -- import your plugin
         {
             "m4xshen/autoclose.nvim",
             init = function()
@@ -55,6 +54,16 @@ require("lazy").setup({
             "ggandor/leap.nvim",
             init = function()
                 require("leap").create_default_mappings()
+            end,
+        },
+        {
+            "quarto-dev/quarto-nvim",
+            dependencies = {
+                "jmbuhr/otter.nvim",
+                "nvim-treesitter/nvim-treesitter",
+            },
+            init = function()
+                require("quarto").setup()
             end,
         },
         {
